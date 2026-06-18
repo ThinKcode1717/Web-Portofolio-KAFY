@@ -1,0 +1,6 @@
+{
+  "name": "KAFY Tech Landing Page",
+  "description": "Corporate Landing Page for KAFY Tech, a provider of professional IT inventory management and cyber security services, featuring an AI chatbot integrated WhatsApp floating widget.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
