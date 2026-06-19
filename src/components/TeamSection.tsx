@@ -1,7 +1,8 @@
 import { Sparkles, Compass } from "lucide-react";
 import { FounderMember } from "../types";
 
-const imageYoga = "/src/ImgProfile/Yoga.png";
+// @ts-ignore
+import imageYoga from "../ImgProfile/Yoga.png";
 
 // Reusable elegant Japanese Sakura cherry blossom petal
 const SakuraPetal = ({ className, size = 20 }: { className: string; size?: number }) => (
