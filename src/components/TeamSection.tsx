@@ -1,6 +1,8 @@
 import { Sparkles, Compass } from "lucide-react";
 import { FounderMember } from "../types";
 
+const imageYoga = "/src/ImgProfile/Yoga.png";
+
 // Reusable elegant Japanese Sakura cherry blossom petal
 const SakuraPetal = ({ className, size = 20 }: { className: string; size?: number }) => (
   <svg 
@@ -57,7 +59,8 @@ export default function TeamSection() {
       avatarSeed: "Yoga",
       avatarBg: "from-rose-950 to-stone-900 border-rose-300/40",
       bio: "Menyatukan keempat pilar teknologi yang terpisah menjadi satu payung layanan holistik terpadu di Surabaya.",
-      visionQuote: "Visi & Misi: Menghadirkan layanan satu pintu (One-Stop) KAFY Tech yang melengkapi semua kebutuhan tanpa perlu mencari vendor lain."
+      visionQuote: "Visi & Misi: Menghadirkan layanan satu pintu (One-Stop) KAFY Tech yang melengkapi semua kebutuhan tanpa perlu mencari vendor lain.",
+      imageUrl: imageYoga
     }
   ];
 
@@ -111,12 +114,21 @@ export default function TeamSection() {
 
                 <div className="flex flex-col md:flex-row gap-6 items-start">
                   
-                  {/* Monogram Circle representing a minimal elegant Japanese ensō or badge */}
-                  <div className={`relative w-20 h-20 rounded-full bg-gradient-to-br ${member.avatarBg} border flex items-center justify-center shadow-lg shrink-0 group-hover:scale-105 transition-transform duration-300`}>
-                    <span className="text-2xl font-display font-bold text-rose-100 tracking-wider">
-                      {member.name.split(" ")[0].substring(0, 2).toUpperCase()}
-                    </span>
-                    <SakuraPetal className="absolute -bottom-1 -right-1 rotate-12 text-rose-300" size={14} />
+                  {/* Monogram Circle or Avatar Image representing a minimal elegant Japanese ensō or badge */}
+                  <div className={`relative w-20 h-20 rounded-full bg-gradient-to-br ${member.avatarBg} border flex items-center justify-center shadow-lg shrink-0 group-hover:scale-105 transition-transform duration-300 overflow-hidden`}>
+                    {member.imageUrl ? (
+                      <img 
+                        src={member.imageUrl} 
+                        alt={member.name} 
+                        className="w-full h-full object-cover" 
+                        referrerPolicy="no-referrer"
+                      />
+                    ) : (
+                      <span className="text-2xl font-display font-bold text-rose-100 tracking-wider">
+                        {member.name.split(" ")[0].substring(0, 2).toUpperCase()}
+                      </span>
+                    )}
+                    <SakuraPetal className="absolute -bottom-1 -right-1 rotate-12 text-rose-300 z-10" size={14} />
                   </div>
 
                   {/* Details block */}

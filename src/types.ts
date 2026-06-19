@@ -18,6 +18,7 @@ export interface FounderMember {
   visionQuote: string;
   certifications: string[];
   whatsappMessage: string;
+  imageUrl?: string;
 }
 
 export interface TestimonialItem {
